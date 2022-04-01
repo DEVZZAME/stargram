@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/head.html :: fragment-head"></head>
+
+<header th:replace="layout/header.html :: fragment-header"></header>
+
+
+<!--인기 게시글-->
+<main class="popular">
+	<div class="exploreContainer">
+
+		<!--인기게시글 갤러리(GRID배치)-->
+		<div class="popular-gallery">
+
+			<div  th:each=" image : ${images}" class="p-img-box">
+				<a th:href="|/user/${image.user.id}|"> <img th:src="|/upload/${image.postImageUrl}|" />
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</main>
+<script src="/js/header.js"></script>
+<footer th:replace="layout/footer.html :: fragment-footer"></footer>
+
+
